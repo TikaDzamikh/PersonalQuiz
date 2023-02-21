@@ -1,8 +1,8 @@
 //
-//  QuestionViewController.swift
+//  ViewController.swift
 //  PersonalQuiz
 //
-//  Created by Alexey Efimov on 15.02.2023.
+//  Created by Timur Dzamikh on 21.02.2023.
 //
 
 import UIKit
@@ -41,6 +41,11 @@ class QuestionViewController: UIViewController {
         updateUI()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultVC = segue.destination as! ResultViewController
+        resultVC.answers = answersChosen
+    }
+    
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
         
@@ -70,10 +75,6 @@ class QuestionViewController: UIViewController {
         print("\(type(of: self)) has been deallocated")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultVC = segue.destination as! ResultViewController
-        resultVC.answers = answersChosen
-    }
 }
 
     

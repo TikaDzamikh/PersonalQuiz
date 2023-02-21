@@ -1,8 +1,8 @@
 //
-//  SceneDelegate.swift
+//  ViewController.swift
 //  PersonalQuiz
 //
-//  Created by Alexey Efimov on 15.02.2023.
+//  Created by Timur Dzamikh on 21.02.2023.
 //
 
 import UIKit
