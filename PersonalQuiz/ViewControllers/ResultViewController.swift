@@ -24,13 +24,10 @@ class ResultViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    deinit {
-        print("\(type(of: self)) has been deallocated")
-    }
 }
 
-extension ResultViewController {
+// MARK: - Private Methods
+private extension ResultViewController {
     private func getResult() {
         let animals = answers.map { $0.animal }
         var animalCount: [Animal: Int] = [:]
@@ -46,10 +43,10 @@ extension ResultViewController {
         let sortedAnimalCount = animalCount.sorted { $0.value > $1.value }
         guard let yourAnimal = sortedAnimalCount.first?.key else { return }
         
-        UpdateUI(for: yourAnimal)
+        updateUI(for: yourAnimal)
     }
     
-    private func UpdateUI(for animal: Animal) {
+    private func updateUI(for animal: Animal) {
         resultLabel.text = "Вы - \(animal.rawValue)!"
         descriptionLabel.text = animal.definition
     }
