@@ -31,6 +31,7 @@ class ResultViewController: UIViewController {
 private extension ResultViewController {
     private func getResult() {
         let animals = answers.map { $0.animal }
+        
         var animalCount: [Animal: Int] = [:]
         
         for animal in animals {
